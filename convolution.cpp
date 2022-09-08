@@ -8,7 +8,7 @@ vector<int> convolution(vector<int> &signal1, vector<int> &signal2, int signal1_
    
     int signal1_size = signal1.size();
     int signal2_size = signal2.size();
-     vector<int> signal3(signal1_size+signal2_size-1); // Define the solution vector
+     vector<int> signal3; // Define the solution vector
     // For the samples in y(n), the left limit is -(signal1_zero+signal2_zero).
     int left_limit = -(signal1_zero+signal2_zero);
     // For the samples in y(n), the right limit is (signal1_size+signal2_size-signal1_zero-signal2_zero)
@@ -24,7 +24,7 @@ vector<int> convolution(vector<int> &signal1, vector<int> &signal2, int signal1_
         }
         
         
-        signal3[i+left_limit]=sum; 
+        signal3.push_back(sum);
         
     }
     
@@ -45,7 +45,7 @@ int main(){
     // The Convoluted Singal 
    int signal1_size = signal1.size();
     int signal2_size = signal2.size();
-     vector<int> signal3(signal1_size+signal2_size-1);
+     vector<int> signal3;
     
     // convolution function is performing the Convolution of Signal 1 with Signal 2 
     signal3 = convolution(signal1,signal2, signal1_zero, signal2_zero); 
