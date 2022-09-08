@@ -10,7 +10,7 @@ vector<int> convolution(vector<int> &signal1, vector<int> &signal2, int signal1_
     int signal2_size = signal2.size();
      vector<int> signal3; // Define the solution vector
     // For the samples in y(n), the left limit is -(signal1_zero+signal2_zero).
-    int left_limit = -(signal1_zero+signal2_zero);
+    int left_limit = -(signal1_zero+signal2_zero-1);
     // For the samples in y(n), the right limit is (signal1_size+signal2_size-signal1_zero-signal2_zero)
     int right_limit = signal1_size+signal2_size-signal1_zero-signal2_zero; 
     // This for loop covers all the samples of y(n)
